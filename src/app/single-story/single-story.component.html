@@ -1,0 +1,43 @@
+<div *ngIf="!storyID" class="loading-section">
+  <!-- You can add a loading indicator here if you want to :) </i> -->
+</div>
+<mat-card>
+  <mat-card-title>Story #{{ storyID }}</mat-card-title>
+  <!-- {{storyID.score}} points by
+    <a href="">{{storyID.by}}</a>
+    {{ (storyID.time)}}
+    <a href="">
+      <span *ngIf="storyID.descendants !== 0">
+        {{storyID.descendants}}
+        <span *ngIf="storyID.descendants === 1">comment</span>
+        <span *ngIf="storyID.descendants > 1">comments</span>
+      </span>
+      <span *ngIf="storyID.descendants === 0">discuss</span>
+    </a> -->
+  <mat-card-subtitle>
+    <div>
+      {{ "Comments" }}
+      <span class="divider">
+        |
+      </span>
+      {{ "Username" }}
+      <span class="divider">
+        |
+      </span>
+      {{ "Time" }}
+    </div>
+    <!-- <mat-card-actions> -->
+      <hr>
+    <!-- <button mat-button> -->
+      <!-- <span><i class="material-icons"> thumb_up </i> -->
+        LIKE
+      <!-- </span> -->
+    <!-- </button> -->
+    <!-- <button mat-button> -->
+      <!-- <i class="material-icons"> share </i> -->
+      
+      SHARE
+    <!-- </button> -->
+    <!-- </mat-card-actions> -->
+  </mat-card-subtitle>
+</mat-card>

@@ -1,14 +1,6 @@
 <div class="main-content">
-  <!-- <ol>
-    <li *ngFor="let item of items; let i = index" class="post">
-      Story #{{ i }}
-    </li>
-  </ol> -->
-  <mat-card *ngFor="let story of stories; let i = index">
-    <!-- <mat-list-item>  -->
-      Story #{{ i }} 
-    <!-- </mat-list-item> -->
-  </mat-card>
+  <app-single-story class="single-story" storyID="{{ i + 1 }}" *ngFor="let story of stories; let i = index"></app-single-story>
+
   <div class="nav">
     <a href="" class="prev">
       ‹ Prev
