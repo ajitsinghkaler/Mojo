@@ -10,12 +10,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import "hammerjs";
 
-import { HeaderComponent } from "./header/header.component";
-import { StoriesComponent } from "./stories/stories.component";
-import { SingleStoryComponent } from "./single-story/single-story.component";
-import { StoryCommentsComponent } from './story-comments/story-comments.component';
-import { CommentTreeComponent } from './comment-tree/comment-tree.component';
-import { CommentComponent } from './comment/comment.component';
+import { HeaderComponent } from "./component/header/header.component";
+import { StoriesComponent } from "./component/stories/stories.component";
+import { SingleStoryComponent } from "./component/single-story/single-story.component";
+import { StoryCommentsComponent } from './component/story-comments/story-comments.component';
+import { CommentTreeComponent } from './component/comment-tree/comment-tree.component';
+import { CommentComponent } from './component/comment/comment.component';
 
 @NgModule({
   declarations: [

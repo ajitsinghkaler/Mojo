@@ -6,12 +6,12 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./single-story.component.scss']
 })
 export class SingleStoryComponent implements OnInit {
-  @Input() storyID;
+  @Input('story') story;
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.storyID)
+    console.log(this.story)
   }
 
 }

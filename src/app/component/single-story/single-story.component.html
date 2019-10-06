@@ -1,0 +1,19 @@
+<div *ngIf="!storyID" class="loading-section">
+  <!-- You can add a loading indicator here if you want to :) </i> -->
+</div>
+<mat-card>
+  <mat-card-title>{{ story.title }}</mat-card-title>
+  <mat-card-subtitle>
+    <div>
+      <span>{{ story.author }}</span>
+      <span class="divider">
+        |
+      </span>
+      <span>{{ 'Comments : ' + story.totalComments }}</span>
+      <span class="divider">
+        |
+      </span>
+      <span>{{ story.createdAt | date:'short' }}</span>
+    </div>
+  </mat-card-subtitle>
+</mat-card>
