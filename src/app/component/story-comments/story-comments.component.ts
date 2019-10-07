@@ -11,8 +11,19 @@ export class StoryCommentsComponent implements OnInit {
   constructor(public commentS: CommentsService) {}
 
   ngOnInit() {
-    this.commentS.getComments().then(comments => {
+    this.commentS.getComments("12").then(comments => {
       this.comments = comments;
     });
+  }
+  
+  addComment(comment) {
+    if (comment.trim().length > 0) {
+      this.commentS.postComment(comment, "12").then(comment => {
+        this.comments = [...this.comments, comment];
+      });
+    } else {
+      console.log("empty");
+      return;
+    }
   }
 }

@@ -1,7 +1,9 @@
 <mat-card>
-  <mat-form-field>
-    <input matInput placeholder="Comment">
-  </mat-form-field>
-  <button mat-button>POST</button>
+  <div class="comment-top">
+    <mat-form-field>
+      <input #postComment matInput placeholder="Comment" />
+    </mat-form-field>
+    <button mat-button (click)="addComment(postComment.value)">POST</button>
+  </div>
   <app-comment-tree [commentTree]="comments"></app-comment-tree>
 </mat-card>

@@ -21,4 +21,16 @@ export class ApiService {
     }
     return this.http.get(this.url + "/" + endpoint, reqOpts);
   }
+  
+  post(endpoint: string, params?: any, reqOpts?: any) {
+    let body = new HttpParams();
+    for (let k in params) {
+      body = body.append(k, params[k]);
+    }
+    return this.http.post(this.url + "/" + endpoint, body, reqOpts);
+  }
+
+  delete(endpoint: string, params?: any, reqOpts?: any){
+    return this.http.delete(this.url + "/" + endpoint);
+  }
 }

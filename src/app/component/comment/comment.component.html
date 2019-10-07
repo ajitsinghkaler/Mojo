@@ -1,26 +1,50 @@
-<div *ngIf="!comment.deleted">
+<div class="comment-space" *ngIf="!comment.deleted">
   <div class="meta" [class.meta-collapse]="collapse">
     <span class="collapse" (click)="collapse = !collapse">
       [{{ collapse ? "+" : "-" }}]
     </span>
-    <span class="meta">{{comment.author}}</span>
+    <span class="meta">{{ comment.author }}</span>
     <span class="meta date">{{ comment.createdAt | date: "short" }}</span>
 
-  </div>
-  <div class="comment-tree">
-    <div [hidden]="collapse">
-      <p class="comment-text" [innerHTML]="comment.comment"></p>
-      <ul class="subtree">
-        <li *ngFor="let subComment of comment.comments">
-          <app-comment [comment]="subComment"></app-comment>
-        </li>
-      </ul>
+    <div class="comment-tree">
+      <div [hidden]="collapse">
+        <div *ngIf="!edit" class="comment-text">{{ comment.comment }}</div>
+        <form #newComment="ngForm">
+          <input
+            *ngIf="edit"
+            matInput
+            placeholder="Edit Comment"
+            value="{{ comment.comment }}"
+            [(ngModel)]="comment.comment"
+            name="editComment"
+          />
+        </form>
+        <!-- <ul class="subtree"> -->
+        
+        <!-- </ul> -->
+      </div>
     </div>
+    <div class="comment-meta-buttons">
+      <button (click)="replyComment()" mat-button>Reply</button>
+      <button *ngIf="!edit" (click)="editComment()" mat-button>Edit</button>
+      <button *ngIf="edit" (click)="saveEditedComment(newComment)" mat-button>
+        Save
+      </button>
+      <button (click)="deleteComment()" mat-button>Delete</button>
+    </div>
+    <div class="comment-top" *ngIf="reply">
+      <mat-form-field>
+        <input #postComment matInput placeholder="Comment" />
+      </mat-form-field>
+      <button mat-button (click)="repliedComment(postComment.value)">
+        POST
+      </button>
+    </div>
+    <div [hidden]="collapse"><div class="sub-tree" *ngFor="let subComment of childComments">
+          <app-comment *ngIf="subComment[0]" [comment]="subComment[0]"></app-comment>
+        </div></div>
   </div>
-  <mat-divider></mat-divider>
 </div>
 <div *ngIf="comment.deleted">
-  <div class="deleted-meta">
-    <span class="collapse">[deleted]</span> | Comment Deleted
-  </div>
+  <div class="deleted-meta">Comment Deleted</div>
 </div>

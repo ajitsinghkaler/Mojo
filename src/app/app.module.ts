@@ -10,6 +10,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { MatListModule } from "@angular/material/list";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import {MatInputModule} from '@angular/material/input';
+import { FormsModule }   from '@angular/forms';
 import "hammerjs";
 
 import { HeaderComponent } from "./component/header/header.component";
@@ -39,7 +40,8 @@ import { CommentComponent } from "./component/comment/comment.component";
     HttpClientModule,
     MatListModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
