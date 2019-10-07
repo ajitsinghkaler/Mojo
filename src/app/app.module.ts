@@ -6,16 +6,18 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { AppComponent } from "./app.component";
 import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
-import { HttpClientModule } from '@angular/common/http';
-
+import { HttpClientModule } from "@angular/common/http";
+import { MatListModule } from "@angular/material/list";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import {MatInputModule} from '@angular/material/input';
 import "hammerjs";
 
 import { HeaderComponent } from "./component/header/header.component";
 import { StoriesComponent } from "./component/stories/stories.component";
 import { SingleStoryComponent } from "./component/single-story/single-story.component";
-import { StoryCommentsComponent } from './component/story-comments/story-comments.component';
-import { CommentTreeComponent } from './component/comment-tree/comment-tree.component';
-import { CommentComponent } from './component/comment/comment.component';
+import { StoryCommentsComponent } from "./component/story-comments/story-comments.component";
+import { CommentTreeComponent } from "./component/comment-tree/comment-tree.component";
+import { CommentComponent } from "./component/comment/comment.component";
 
 @NgModule({
   declarations: [
@@ -34,7 +36,10 @@ import { CommentComponent } from './component/comment/comment.component';
     FlexLayoutModule,
     MatCardModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatListModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

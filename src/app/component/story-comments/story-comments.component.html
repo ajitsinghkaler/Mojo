@@ -1,3 +1,7 @@
-<p>
-  story-comments works!
-</p>
+<mat-card>
+  <mat-form-field>
+    <input matInput placeholder="Comment">
+  </mat-form-field>
+  <button mat-button>POST</button>
+  <app-comment-tree [commentTree]="comments"></app-comment-tree>
+</mat-card>

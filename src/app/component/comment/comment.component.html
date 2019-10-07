@@ -1,12 +1,15 @@
-<!-- <div *ngIf="!comment.deleted">
+<div *ngIf="!comment.deleted">
   <div class="meta" [class.meta-collapse]="collapse">
-    <span class="collapse" (click)="collapse = !collapse">[{{collapse ? '+' : '-'}}]</span>
-    <a [routerLink]="['/user', comment.user]" routerLinkActive="active">{{comment.user}}</a>
-    <span class="time">{{comment.time_ago}}</span>
+    <span class="collapse" (click)="collapse = !collapse">
+      [{{ collapse ? "+" : "-" }}]
+    </span>
+    <span class="meta">{{comment.author}}</span>
+    <span class="meta date">{{ comment.createdAt | date: "short" }}</span>
+
   </div>
   <div class="comment-tree">
     <div [hidden]="collapse">
-      <p class="comment-text" [innerHTML]="comment.content"></p>
+      <p class="comment-text" [innerHTML]="comment.comment"></p>
       <ul class="subtree">
         <li *ngFor="let subComment of comment.comments">
           <app-comment [comment]="subComment"></app-comment>
@@ -14,9 +17,10 @@
       </ul>
     </div>
   </div>
+  <mat-divider></mat-divider>
 </div>
 <div *ngIf="comment.deleted">
   <div class="deleted-meta">
     <span class="collapse">[deleted]</span> | Comment Deleted
   </div>
-</div> -->
+</div>

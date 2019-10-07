@@ -11,7 +11,6 @@ export class SingleStoryComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.story)
   }
 
 }
