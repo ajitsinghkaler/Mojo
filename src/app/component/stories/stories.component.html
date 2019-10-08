@@ -3,5 +3,6 @@
     class="single-story"
     [story]="story"
     *ngFor="let story of stories; let i = index"
+    (click)="toComments(story)"
   ></app-single-story>
 </div>

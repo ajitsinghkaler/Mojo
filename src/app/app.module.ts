@@ -9,9 +9,12 @@ import { MatButtonModule } from "@angular/material/button";
 import { HttpClientModule } from "@angular/common/http";
 import { MatListModule } from "@angular/material/list";
 import { MatFormFieldModule } from "@angular/material/form-field";
-import {MatInputModule} from '@angular/material/input';
-import { FormsModule }   from '@angular/forms';
+import { MatInputModule } from "@angular/material/input";
+import { FormsModule } from "@angular/forms";
 import "hammerjs";
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { AuthInterceptor } from "./service/users/auth.interceptor";
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 import { HeaderComponent } from "./component/header/header.component";
 import { StoriesComponent } from "./component/stories/stories.component";
@@ -19,8 +22,8 @@ import { SingleStoryComponent } from "./component/single-story/single-story.comp
 import { StoryCommentsComponent } from "./component/story-comments/story-comments.component";
 import { CommentTreeComponent } from "./component/comment-tree/comment-tree.component";
 import { CommentComponent } from "./component/comment/comment.component";
-import { LoginComponent } from './component/login/login.component';
-import { SignupComponent } from './component/signup/signup.component';
+import { LoginComponent } from "./component/login/login.component";
+import { SignupComponent } from "./component/signup/signup.component";
 
 @NgModule({
   declarations: [
@@ -45,9 +48,16 @@ import { SignupComponent } from './component/signup/signup.component';
     MatListModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
