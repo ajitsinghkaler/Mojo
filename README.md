@@ -14,8 +14,11 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Things left to do
 
 Adding Better Styles
+
 Adding Unit Tests
+
 Keeping signup and login component Different
+
 Styling Signup and login
 Adding Stories
 Editing Stories
