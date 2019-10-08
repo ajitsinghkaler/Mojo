@@ -20,7 +20,10 @@ Adding Unit Tests
 Keeping signup and login component Different
 
 Styling Signup and login
+
 Adding Stories
+
 Editing Stories
+
 Username check at current anyone can delete or edit your posts
 
