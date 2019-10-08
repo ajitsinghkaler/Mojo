@@ -25,5 +25,5 @@ Adding Stories
 
 Editing Stories
 
-Username check at current anyone can delete or edit your posts
+Username check at current anyone can delete or edit your posts as of now
 
