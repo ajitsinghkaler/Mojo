@@ -19,6 +19,8 @@ import { SingleStoryComponent } from "./component/single-story/single-story.comp
 import { StoryCommentsComponent } from "./component/story-comments/story-comments.component";
 import { CommentTreeComponent } from "./component/comment-tree/comment-tree.component";
 import { CommentComponent } from "./component/comment/comment.component";
+import { LoginComponent } from './component/login/login.component';
+import { SignupComponent } from './component/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { CommentComponent } from "./component/comment/comment.component";
     SingleStoryComponent,
     StoryCommentsComponent,
     CommentTreeComponent,
-    CommentComponent
+    CommentComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

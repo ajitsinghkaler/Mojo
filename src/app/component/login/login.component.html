@@ -1,0 +1,29 @@
+<mat-card
+  ><form (ngSubmit)="onSignin(f)" #f="ngForm">
+    <mat-list>
+      <mat-form-field>
+        <input
+          type="text"
+          placeholder="Username"
+          matInput
+          ngModel
+          name="username"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Password"
+          type="password"
+          ngModel
+          name="password"
+          required
+        />
+      </mat-form-field>
+    </mat-list>
+    <button mat-button type="submit" [disabled]="!f.valid">
+      {{ "Login" }}
+    </button>
+  </form>
+</mat-card>
